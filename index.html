@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora de PatrimÙnio</title>
-    <!-- Adiciona o script do Tailwind CSS para estilizaÁ„o -->
+    <title>Calculadora de Patrim√¥nio</title>
+    <!-- Adiciona o script do Tailwind CSS para estiliza√ß√£o -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Adiciona o script do Chart.js para criar os gr·ficos -->
+    <!-- Adiciona o script do Chart.js para criar os gr√°ficos -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Adiciona as bibliotecas do Firebase -->
     <script type="module">
@@ -59,7 +59,7 @@
         // Function to save data to Firestore
         window.saveData = async () => {
             if (!userId) {
-                console.error("Usu·rio n„o autenticado. N„o È possÌvel salvar os dados.");
+                console.error("Usu√°rio n√£o autenticado. N√£o √© poss√≠vel salvar os dados.");
                 return;
             }
 
@@ -96,7 +96,7 @@
         // Function to load data from Firestore
         window.loadData = () => {
              if (!userId) {
-                console.log("Aguardando autenticaÁ„o para carregar os dados.");
+                console.log("Aguardando autentica√ß√£o para carregar os dados.");
                 return;
             }
 
@@ -123,7 +123,7 @@
                     // Trigger calculations after loading data
                     calcularPatrimonio();
                 } else {
-                    console.log("Nenhum dado encontrado para este usu·rio.");
+                    console.log("Nenhum dado encontrado para este usu√°rio.");
                 }
             }, (error) => {
                 console.error("Erro ao ler dados: ", error);
@@ -157,55 +157,55 @@
     <div class="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full">
         <!-- User ID display -->
         <div class="text-xs text-right text-gray-400 mb-4">
-            ID do Usu·rio: <span id="userIdDisplay">Carregando...</span>
+            ID do Usu√°rio: <span id="userIdDisplay">Carregando...</span>
         </div>
-        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Calculadora de PatrimÙnio</h1>
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Calculadora de Patrim√¥nio</h1>
         <p class="text-center text-gray-600 mb-8">
-            Calcule seu patrimÙnio total com base no seu gasto mensal e na porcentagem que ele representa.
+            Calcule seu patrim√¥nio total com base no seu gasto mensal e na porcentagem que ele representa.
         </p>
         
-        <!-- SeÁ„o de ExplicaÁ„o da Regra dos 4% -->
+        <!-- Se√ß√£o de Explica√ß√£o da Regra dos 4% -->
         <div class="mb-12 p-6 bg-gray-50 rounded-lg shadow-inner">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">A Regra dos 4%: Por Que Ela È Essencial?</h2>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">A Regra dos 4%: Por Que Ela √© Essencial?</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
-                A <strong>Regra dos 4%</strong> È um conceito fundamental no mundo da independÍncia financeira. Ela sugere que, para um patrimÙnio que est· sendo investido, a retirada anual de atÈ 4% desse valor pode ser feita de forma sustent·vel, sem esgotar o capital ao longo do tempo.
+                A <strong>Regra dos 4%</strong> √© um conceito fundamental no mundo da independ√™ncia financeira. Ela sugere que, para um patrim√¥nio que est√° sendo investido, a retirada anual de at√© 4% desse valor pode ser feita de forma sustent√°vel, sem esgotar o capital ao longo do tempo.
             </p>
             <p class="text-gray-700 leading-relaxed mb-4">
-                A regra foi popularizada pelo <a href="#" class="text-indigo-600 hover:underline">Trinity Study</a>, um estudo que analisou o desempenho de portfÛlios de investimento ao longo de dÈcadas. O estudo concluiu que, com uma alocaÁ„o de ativos diversificada, uma taxa de retirada de 4% ao ano tinha uma alta probabilidade de sucesso (ou seja, o dinheiro n„o acabaria) por 30 anos ou mais.
+                A regra foi popularizada pelo <a href="#" class="text-indigo-600 hover:underline">Trinity Study</a>, um estudo que analisou o desempenho de portf√≥lios de investimento ao longo de d√©cadas. O estudo concluiu que, com uma aloca√ß√£o de ativos diversificada, uma taxa de retirada de 4% ao ano tinha uma alta probabilidade de sucesso (ou seja, o dinheiro n√£o acabaria) por 30 anos ou mais.
             </p>
             <p class="text-gray-700 leading-relaxed">
-                A import‚ncia de manter os gastos abaixo desse limite È que os 6% restantes (assumindo um retorno mÈdio de 10% do mercado, por exemplo) permitem que seu capital continue crescendo e se ajuste ‡ inflaÁ„o, garantindo que o seu "sal·rio" proveniente dos investimentos se mantenha relevante e duradouro. Isso È o que permite a <strong class="text-indigo-600">verdadeira independÍncia financeira</strong>, onde vocÍ vive da renda gerada pelo seu patrimÙnio, sem a necessidade de trabalhar.
+                A import√¢ncia de manter os gastos abaixo desse limite √© que os 6% restantes (assumindo um retorno m√©dio de 10% do mercado, por exemplo) permitem que seu capital continue crescendo e se ajuste √† infla√ß√£o, garantindo que o seu "sal√°rio" proveniente dos investimentos se mantenha relevante e duradouro. Isso √© o que permite a <strong class="text-indigo-600">verdadeira independ√™ncia financeira</strong>, onde voc√™ vive da renda gerada pelo seu patrim√¥nio, sem a necessidade de trabalhar.
             </p>
         </div>
 
         <div class="space-y-6">
             <div>
                 <label for="valorDesejado" class="block text-gray-700 font-semibold mb-2">Valor que desejo Ganhar mensalmente no futuro (R$)</label>
-                <!-- Valor padr„o: 8000 -->
+                <!-- Valor padr√£o: 8000 -->
                 <input type="number" id="valorDesejado" value="8000" placeholder="Ex: 8000" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularPatrimonio()">
             </div>
 
             <div>
-                <label for="percentual" class="block text-gray-700 font-semibold mb-2">Porcentagem do PatrimÙnio Total (%)</label>
-                <!-- Valor padr„o: 2.4 -->
+                <label for="percentual" class="block text-gray-700 font-semibold mb-2">Porcentagem do Patrim√¥nio Total (%)</label>
+                <!-- Valor padr√£o: 2.4 -->
                 <input type="number" id="percentual" value="2.4" placeholder="Ex: 2.4" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularPatrimonio()">
             </div>
         </div>
 
         <div id="resultadoPatrimonio" class="mt-8 p-6 bg-blue-50 rounded-lg border border-blue-200 hidden">
-            <h2 class="text-xl font-bold text-blue-800">Seu PatrimÙnio Total È:</h2>
+            <h2 class="text-xl font-bold text-blue-800">Seu Patrim√¥nio Total √©:</h2>
             <p id="valorPatrimonio" class="text-2xl font-extrabold text-blue-900 mt-2"></p>
         </div>
 
         <div id="mensagemErroPatrimonio" class="mt-8 p-4 bg-red-100 text-red-700 font-medium rounded-lg hidden">
-            Por favor, insira valores v·lidos para calcular o patrimÙnio.
+            Por favor, insira valores v√°lidos para calcular o patrim√¥nio.
         </div>
         
         <hr class="my-8 border-t-2 border-gray-200">
 
         <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Planejamento da Carteira de Investimento</h2>
         <p class="text-center text-gray-600 mb-8">
-            Distribua seu patrimÙnio entre as classes de ativos para alcanÁar seu objetivo.
+            Distribua seu patrim√¥nio entre as classes de ativos para alcan√ßar seu objetivo.
         </p>
 
         <div class="space-y-6">
@@ -215,7 +215,7 @@
                 <span id="fiiValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
-                <label for="acoesPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">AÁıes (%)</label>
+                <label for="acoesPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">A√ß√µes (%)</label>
                 <input type="number" id="acoesPercentual" value="60" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularCarteira()">
                 <span id="acoesValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
@@ -235,9 +235,9 @@
             A soma das porcentagens deve ser exatamente 100%. Por favor, ajuste os valores.
         </div>
         
-        <!-- Canvas para o gr·fico de pizza -->
+        <!-- Canvas para o gr√°fico de pizza -->
         <div id="pieChartContainer" class="mt-8 hidden">
-            <h2 class="text-xl font-bold text-center text-gray-800 mb-4">AlocaÁ„o da Carteira</h2>
+            <h2 class="text-xl font-bold text-center text-gray-800 mb-4">Aloca√ß√£o da Carteira</h2>
             <canvas id="portfolioPieChart"></canvas>
         </div>
 
@@ -255,7 +255,7 @@
                 <span id="fiiDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
-                <label for="acoesDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">AÁıes (%)</label>
+                <label for="acoesDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">A√ß√µes (%)</label>
                 <input type="number" id="acoesDividendoPercentual" value="9" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularDividendos()">
                 <span id="acoesDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
@@ -281,9 +281,9 @@
 
         <hr class="my-8 border-t-2 border-gray-200">
 
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">C·lculo de Investimento Mensal</h2>
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">C√°lculo de Investimento Mensal</h2>
         <p class="text-center text-gray-600 mb-8">
-            Descubra quanto precisa investir mensalmente para alcanÁar o patrimÙnio desejado.
+            Descubra quanto precisa investir mensalmente para alcan√ßar o patrim√¥nio desejado.
         </p>
         
         <div class="space-y-6">
@@ -299,71 +299,71 @@
         </div>
 
         <div id="resultadoInvestimento" class="mt-8 p-6 bg-green-50 rounded-lg border border-green-200 hidden">
-            <h2 class="text-xl font-bold text-green-800">VocÍ precisa investir:</h2>
+            <h2 class="text-xl font-bold text-green-800">Voc√™ precisa investir:</h2>
             <p id="valorInvestimento" class="text-2xl font-extrabold text-green-900 mt-2"></p>
         </div>
 
         <div id="mensagemErroInvestimento" class="mt-8 p-4 bg-red-100 text-red-700 font-medium rounded-lg hidden">
-            Por favor, insira valores v·lidos. A taxa de retorno e o tempo devem ser maiores que zero.
+            Por favor, insira valores v√°lidos. A taxa de retorno e o tempo devem ser maiores que zero.
         </div>
 
-        <!-- Canvas para o gr·fico de investimento -->
+        <!-- Canvas para o gr√°fico de investimento -->
         <div id="chartContainer" class="mt-8 hidden">
-            <h2 class="text-xl font-bold text-center text-gray-800 mb-4">Crescimento do PatrimÙnio</h2>
+            <h2 class="text-xl font-bold text-center text-gray-800 mb-4">Crescimento do Patrim√¥nio</h2>
             <canvas id="investmentChart"></canvas>
         </div>
         
         <hr class="my-8 border-t-2 border-gray-200">
 
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">An·lise de InflaÁ„o e Crescimento Real</h2>
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">An√°lise de Infla√ß√£o e Crescimento Real</h2>
         <p class="text-center text-gray-600 mb-8">
-            Verifique se seu patrimÙnio est· crescendo acima da inflaÁ„o.
+            Verifique se seu patrim√¥nio est√° crescendo acima da infla√ß√£o.
         </p>
 
         <div class="space-y-6">
             <div>
-                <label for="inflacaoAnual" class="block text-gray-700 font-semibold mb-2">InflaÁ„o Anual (%)</label>
+                <label for="inflacaoAnual" class="block text-gray-700 font-semibold mb-2">Infla√ß√£o Anual (%)</label>
                 <input type="number" id="inflacaoAnual" value="6" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="analisarInflacao()">
             </div>
         </div>
 
         <div id="resultadoInflacao" class="mt-8 p-6 bg-yellow-50 rounded-lg border border-yellow-200 hidden">
-            <h2 class="text-xl font-bold text-yellow-800">An·lise de Crescimento:</h2>
+            <h2 class="text-xl font-bold text-yellow-800">An√°lise de Crescimento:</h2>
             <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2">
                 <li><span class="font-bold">Retorno Real da Carteira:</span> <span id="retornoReal" class="font-extrabold text-yellow-900"></span><p class="text-sm mt-1 text-gray-600" id="retornoRealExplicacao"></p></li>
-                <li><span class="font-bold">Aporte Necess·rio para FIIs (prÛximo ano):</span> <span id="aporteFiiInflacao" class="font-extrabold text-yellow-900"></span><p class="text-sm mt-1 text-gray-600" id="aporteFiiExplicacao"></p></li>
+                <li><span class="font-bold">Aporte Necess√°rio para FIIs (pr√≥ximo ano):</span> <span id="aporteFiiInflacao" class="font-extrabold text-yellow-900"></span><p class="text-sm mt-1 text-gray-600" id="aporteFiiExplicacao"></p></li>
             </ul>
         </div>
         
         <hr class="my-8 border-t-2 border-gray-200">
 
-        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">ProjeÁ„o do PatrimÙnio para o PrÛximo Ano</h2>
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Proje√ß√£o do Patrim√¥nio para o Pr√≥ximo Ano</h2>
         <p class="text-center text-gray-600 mb-8">
-            Calcule o valor do seu patrimÙnio para o prÛximo ano, considerando os rendimentos.
+            Calcule o valor do seu patrim√¥nio para o pr√≥ximo ano, considerando os rendimentos.
         </p>
         
         <div id="resultadoProximoAno" class="mt-8 p-6 bg-purple-50 rounded-lg border border-purple-200 hidden">
             <h2 class="text-xl font-bold text-purple-800">Crescimento Projetado:</h2>
             <ul class="list-disc list-inside mt-4 text-gray-700 space-y-2">
-                <li><span class="font-bold">PatrimÙnio Total para o PrÛximo Ano:</span> <span id="patrimonioProximoAno" class="font-extrabold text-purple-900"></span></li>
+                <li><span class="font-bold">Patrim√¥nio Total para o Pr√≥ximo Ano:</span> <span id="patrimonioProximoAno" class="font-extrabold text-purple-900"></span></li>
                 <li><span class="font-bold">Crescimento Anual em Valor:</span> <span id="crescimentoValor" class="font-extrabold text-purple-900"></span></li>
                 <li><span class="font-bold">Crescimento Anual em %:</span> <span id="crescimentoPercentual" class="font-extrabold text-purple-900"></span></li>
             </ul>
-            <p class="mt-4 text-sm text-gray-600">Este c·lculo reflete o valor total do seu patrimÙnio para o prÛximo ano, somando o patrimÙnio inicial com o total de dividendos, subtraindo os dividendos de FIIs e subtraindo o valor de aporte em FIIs sugerido para a inflaÁ„o. Esta abordagem permite visualizar o crescimento considerando a realocaÁ„o de capital e a manutenÁ„o do poder de compra.</p>
+            <p class="mt-4 text-sm text-gray-600">Este c√°lculo reflete o valor total do seu patrim√¥nio para o pr√≥ximo ano, somando o patrim√¥nio inicial com o total de dividendos, subtraindo os dividendos de FIIs e subtraindo o valor de aporte em FIIs sugerido para a infla√ß√£o. Esta abordagem permite visualizar o crescimento considerando a realoca√ß√£o de capital e a manuten√ß√£o do poder de compra.</p>
         </div>
         
         <hr class="my-8 border-t-2 border-gray-200">
 
         <!-- Report section -->
         <div id="relatorioCompleto" class="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-200 hidden">
-            <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">RelatÛrio de An·lise</h2>
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-4">Relat√≥rio de An√°lise</h2>
             <div class="space-y-4">
                 <p><span class="font-semibold text-gray-700">Objetivo de Renda Mensal:</span> <span id="reportValorDesejado" class="font-bold text-gray-900"></span></p>
-                <p><span class="font-semibold text-gray-700">PatrimÙnio Total Necess·rio:</span> <span id="reportPatrimonioTotal" class="font-bold text-gray-900"></span></p>
-                <h3 class="font-semibold text-gray-700 text-lg mt-4">AlocaÁ„o de PatrimÙnio:</h3>
+                <p><span class="font-semibold text-gray-700">Patrim√¥nio Total Necess√°rio:</span> <span id="reportPatrimonioTotal" class="font-bold text-gray-900"></span></p>
+                <h3 class="font-semibold text-gray-700 text-lg mt-4">Aloca√ß√£o de Patrim√¥nio:</h3>
                 <ul class="list-disc list-inside text-gray-700">
                     <li>FII: <span id="reportFiiValor" class="font-bold text-gray-900"></span></li>
-                    <li>AÁıes: <span id="reportAcoesValor" class="font-bold text-gray-900"></span></li>
+                    <li>A√ß√µes: <span id="reportAcoesValor" class="font-bold text-gray-900"></span></li>
                     <li>Renda Fixa: <span id="reportRendaFixaValor" class="font-bold text-gray-900"></span></li>
                     <li>Internacional: <span id="reportInternacionalValor" class="font-bold text-gray-900"></span></li>
                 </ul>
@@ -372,15 +372,15 @@
                     <li>Total Anual: <span id="reportTotalDividendoAnual" class="font-bold text-gray-900"></span></li>
                     <li>Total Mensal: <span id="reportTotalDividendoMensal" class="font-bold text-gray-900"></span></li>
                 </ul>
-                <h3 class="font-semibold text-gray-700 text-lg mt-4">An·lise de Crescimento Real:</h3>
+                <h3 class="font-semibold text-gray-700 text-lg mt-4">An√°lise de Crescimento Real:</h3>
                 <ul class="list-disc list-inside text-gray-700">
                     <li>Retorno Real: <span id="reportRetornoReal" class="font-bold text-gray-900"></span></li>
-                    <li>Aporte em FIIs para InflaÁ„o: <span id="reportAporteFiiInflacao" class="font-bold text-gray-900"></span></li>
+                    <li>Aporte em FIIs para Infla√ß√£o: <span id="reportAporteFiiInflacao" class="font-bold text-gray-900"></span></li>
                 </ul>
-                <p class="mt-4"><span class="font-semibold text-gray-700">Para atingir o objetivo, vocÍ precisa investir mensalmente:</span> <span id="reportInvestimentoMensal" class="font-bold text-green-700"></span></p>
+                <p class="mt-4"><span class="font-semibold text-gray-700">Para atingir o objetivo, voc√™ precisa investir mensalmente:</span> <span id="reportInvestimentoMensal" class="font-bold text-green-700"></span></p>
                 
-                <!-- Nova seÁ„o de an·lise de viabilidade -->
-                <h3 class="font-semibold text-gray-700 text-lg mt-4">An·lise de Viabilidade: FIIs</h3>
+                <!-- Nova se√ß√£o de an√°lise de viabilidade -->
+                <h3 class="font-semibold text-gray-700 text-lg mt-4">An√°lise de Viabilidade: FIIs</h3>
                 <p id="analiseViabilidadeFII" class="text-gray-700"></p>
             </div>
         </div>
@@ -414,7 +414,7 @@
             
             // Initial call to set default values and run calculations
             calcularPatrimonio();
-            // Executa o c·lculo de investimento mensal automaticamente ao carregar a p·gina
+            // Executa o c√°lculo de investimento mensal automaticamente ao carregar a p√°gina
             calcularInvestimentoMensal();
         });
 
@@ -486,7 +486,7 @@
 
             const investimentoMensal = patrimonioTotal / (((Math.pow(1 + taxaMensal, periodos) - 1) / taxaMensal));
             
-            // ProjeÁ„o de Crescimento do PatrimÙnio
+            // Proje√ß√£o de Crescimento do Patrim√¥nio
             const labels = [];
             const data = [];
             let patrimonioAtual = 0;
@@ -525,7 +525,7 @@
                 data: {
                     labels: labels,
                     datasets: [{
-                        label: 'PatrimÙnio Projetado',
+                        label: 'Patrim√¥nio Projetado',
                         data: data,
                         borderColor: 'rgb(59, 130, 246)',
                         backgroundColor: 'rgba(59, 130, 246, 0.2)',
@@ -541,7 +541,7 @@
                             beginAtZero: true,
                             title: {
                                 display: true,
-                                text: 'PatrimÙnio (R$)'
+                                text: 'Patrim√¥nio (R$)'
                             },
                             ticks: {
                                 callback: function(value) {
@@ -640,7 +640,7 @@
             mensagemErroDiv.classList.add('hidden');
             
             if (isNaN(fiiPercentual) || isNaN(acoesPercentual) || isNaN(rendaFixaPercentual)) {
-                mensagemErroDiv.textContent = "Por favor, insira valores v·lidos para todas as classes de ativo.";
+                mensagemErroDiv.textContent = "Por favor, insira valores v√°lidos para todas as classes de ativo.";
                 mensagemErroDiv.classList.remove('hidden');
                 return;
             }
@@ -676,7 +676,7 @@
             document.getElementById('reportInternacionalValor').textContent = formatter.format(valorInternacional);
 
             // Render the pie chart
-            const labels = ['FII', 'AÁıes', 'Renda Fixa', 'Internacional'];
+            const labels = ['FII', 'A√ß√µes', 'Renda Fixa', 'Internacional'];
             const data = [fiiPercentual, acoesPercentual, rendaFixaPercentual, internacionalPercentual];
             renderPieChart(labels, data);
             
@@ -751,7 +751,7 @@
             internacionalDividendoValorSpan.textContent = `(${formatter.format(internacionalDividendoAnual)} - ${internacionalTotalPercent.toFixed(2)}%)`;
             
             totalDividendoAnualSpan.textContent = `${formatter.format(totalDividendoAnual)} (${totalDividendoAnualPercentual.toFixed(2)}% ao ano)`;
-            totalDividendoMensalSpan.textContent = `${formatter.format(totalDividendoMensal)} (${totalDividendoMensalPercentual.toFixed(2)}% ao mÍs)`;
+            totalDividendoMensalSpan.textContent = `${formatter.format(totalDividendoMensal)} (${totalDividendoMensalPercentual.toFixed(2)}% ao m√™s)`;
 
             resultadoDividendosDiv.classList.remove('hidden');
             
@@ -763,17 +763,17 @@
             document.getElementById('reportValorDesejado').textContent = formatter.format(parseFloat(sessionStorage.getItem('valorDesejado')));
             document.getElementById('reportPatrimonioTotal').textContent = formatter.format(patrimonioTotal);
             document.getElementById('reportTotalDividendoAnual').textContent = `${formatter.format(totalDividendoAnual)} (${totalDividendoAnualPercentual.toFixed(2)}% ao ano)`;
-            document.getElementById('reportTotalDividendoMensal').textContent = `${formatter.format(totalDividendoMensal)} (${totalDividendoMensalPercentual.toFixed(2)}% ao mÍs)`;
+            document.getElementById('reportTotalDividendoMensal').textContent = `${formatter.format(totalDividendoMensal)} (${totalDividendoMensalPercentual.toFixed(2)}% ao m√™s)`;
 
-            // An·lise de Viabilidade dos FIIs
+            // An√°lise de Viabilidade dos FIIs
             const valorDesejado = parseFloat(sessionStorage.getItem('valorDesejado'));
             const fiiDividendoMensal = fiiDividendoAnual / 12;
             
             let analiseTexto = '';
             if (fiiDividendoMensal >= valorDesejado) {
-                analiseTexto = `<span class="text-green-700 font-bold">Vi·vel.</span> Os dividendos mensais dos FIIs (${formatter.format(fiiDividendoMensal)}) s„o suficientes para cobrir seu objetivo de renda mensal (${formatter.format(valorDesejado)}).`;
+                analiseTexto = `<span class="text-green-700 font-bold">Vi√°vel.</span> Os dividendos mensais dos FIIs (${formatter.format(fiiDividendoMensal)}) s√£o suficientes para cobrir seu objetivo de renda mensal (${formatter.format(valorDesejado)}).`;
             } else {
-                analiseTexto = `<span class="text-red-700 font-bold">N„o vi·vel.</span> Os dividendos mensais dos FIIs (${formatter.format(fiiDividendoMensal)}) n„o s„o suficientes para cobrir seu objetivo de renda mensal (${formatter.format(valorDesejado)}). VocÍ precisar· de dividendos de outras classes de ativos para atingir o objetivo.`;
+                analiseTexto = `<span class="text-red-700 font-bold">N√£o vi√°vel.</span> Os dividendos mensais dos FIIs (${formatter.format(fiiDividendoMensal)}) n√£o s√£o suficientes para cobrir seu objetivo de renda mensal (${formatter.format(valorDesejado)}). Voc√™ precisar√° de dividendos de outras classes de ativos para atingir o objetivo.`;
             }
             analiseViabilidadeFIIDiv.innerHTML = analiseTexto;
         }
@@ -800,7 +800,7 @@
             const retornoRealDecimal = ((1 + taxaRetorno / 100) / (1 + inflacaoAnual / 100)) - 1;
             const retornoRealPercentual = retornoRealDecimal * 100;
 
-            // Calcula o aporte necess·rio em FIIs para manter o poder de compra
+            // Calcula o aporte necess√°rio em FIIs para manter o poder de compra
             const aporteFiiInflacao = valorFii * (inflacaoAnual / 100);
             sessionStorage.setItem('aporteFiiInflacao', aporteFiiInflacao);
 
@@ -815,11 +815,11 @@
             if (retornoRealPercentual > 0) {
                 retornoRealSpan.classList.remove('text-red-900');
                 retornoRealSpan.classList.add('text-green-900');
-                retornoRealExplicacaoP.textContent = `Seu patrimÙnio est· crescendo acima da inflaÁ„o, ou seja, seu poder de compra est· aumentando.`;
+                retornoRealExplicacaoP.textContent = `Seu patrim√¥nio est√° crescendo acima da infla√ß√£o, ou seja, seu poder de compra est√° aumentando.`;
             } else {
                 retornoRealSpan.classList.remove('text-green-900');
                 retornoRealSpan.classList.add('text-red-900');
-                retornoRealExplicacaoP.textContent = `Seu patrimÙnio n„o est· acompanhando a inflaÁ„o, ou seja, seu poder de compra est· diminuindo.`;
+                retornoRealExplicacaoP.textContent = `Seu patrim√¥nio n√£o est√° acompanhando a infla√ß√£o, ou seja, seu poder de compra est√° diminuindo.`;
             }
             
             // Aporte para FIIs
@@ -828,7 +828,7 @@
             const novoDividendoMensal = dividendoMensalFiiAtual * (1 + (inflacaoAnual / 100));
 
             aporteFiiInflacaoSpan.textContent = `${formatter.format(aporteFiiInflacao)} (${formatter.format(novoDividendoMensal)} mensais)`;
-            aporteFiiExplicacaoP.textContent = `Esse È o valor de aporte em FIIs necess·rio para manter o poder de compra no prÛximo ano. O novo recebimento mensal de dividendos para essa porÁ„o da carteira seria de ${formatter.format(novoDividendoMensal)}.`;
+            aporteFiiExplicacaoP.textContent = `Esse √© o valor de aporte em FIIs necess√°rio para manter o poder de compra no pr√≥ximo ano. O novo recebimento mensal de dividendos para essa por√ß√£o da carteira seria de ${formatter.format(novoDividendoMensal)}.`;
 
             resultadoDiv.classList.remove('hidden');
 
@@ -855,10 +855,10 @@
                 return;
             }
             
-            // Crescimento lÌquido conforme a solicitaÁ„o do usu·rio
+            // Crescimento l√≠quido conforme a solicita√ß√£o do usu√°rio
             const crescimentoLiquido = totalDividendoAnual - fiiDividendoAnual - aporteFiiInflacao;
 
-            // Novo patrimÙnio
+            // Novo patrim√¥nio
             const novoPatrimonio = patrimonioTotal + crescimentoLiquido;
             const crescimentoPercentual = (crescimentoLiquido / patrimonioTotal) * 100;
             
