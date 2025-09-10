@@ -121,7 +121,7 @@
                     document.getElementById('inflacaoAnual').value = data.inflacaoAnual;
                     
                     // Trigger calculations after loading data
-                    calcularPatrimonio();
+                    recalcularTudo();
                 } else {
                     console.log("Nenhum dado encontrado para este usuário.");
                 }
@@ -154,7 +154,7 @@
     </style>
 </head>
 <body class="flex items-center justify-center min-h-screen p-4">
-    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full">
+    <div class="bg-white p-8 rounded-2xl shadow-xl max-w-lg w-full" id="main-container">
         <!-- User ID display -->
         <div class="text-xs text-right text-gray-400 mb-4">
             ID do Usuário: <span id="userIdDisplay">Carregando...</span>
@@ -182,13 +182,13 @@
             <div>
                 <label for="valorDesejado" class="block text-gray-700 font-semibold mb-2">Valor que desejo Ganhar mensalmente no futuro (R$)</label>
                 <!-- Valor padrão: 8000 -->
-                <input type="number" id="valorDesejado" value="8000" placeholder="Ex: 8000" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularPatrimonio()">
+                <input type="number" id="valorDesejado" value="8000" placeholder="Ex: 8000" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
             </div>
 
             <div>
                 <label for="percentual" class="block text-gray-700 font-semibold mb-2">Porcentagem do Patrimônio Total (%)</label>
                 <!-- Valor padrão: 2.4 -->
-                <input type="number" id="percentual" value="2.4" placeholder="Ex: 2.4" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularPatrimonio()">
+                <input type="number" id="percentual" value="2.4" placeholder="Ex: 2.4" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
             </div>
         </div>
 
@@ -211,22 +211,22 @@
         <div class="space-y-6">
             <div class="flex items-center space-x-4">
                 <label for="fiiPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">FII (%)</label>
-                <input type="number" id="fiiPercentual" value="20" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularCarteira()">
+                <input type="number" id="fiiPercentual" value="20" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="fiiValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="acoesPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Ações (%)</label>
-                <input type="number" id="acoesPercentual" value="60" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularCarteira()">
+                <input type="number" id="acoesPercentual" value="60" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="acoesValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="rendaFixaPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Renda Fixa (%)</label>
-                <input type="number" id="rendaFixaPercentual" value="5" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularCarteira()">
+                <input type="number" id="rendaFixaPercentual" value="5" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="rendaFixaValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="internacionalPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Internacional (%)</label>
-                <input type="number" id="internacionalPercentual" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularCarteira()">
+                <input type="number" id="internacionalPercentual" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="internacionalValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
         </div>
@@ -251,22 +251,22 @@
         <div class="space-y-6">
             <div class="flex items-center space-x-4">
                 <label for="fiiDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">FII (%)</label>
-                <input type="number" id="fiiDividendoPercentual" value="12" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularDividendos()">
+                <input type="number" id="fiiDividendoPercentual" value="12" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="fiiDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="acoesDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Ações (%)</label>
-                <input type="number" id="acoesDividendoPercentual" value="9" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularDividendos()">
+                <input type="number" id="acoesDividendoPercentual" value="9" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="acoesDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="rendaFixaDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Renda Fixa (%)</label>
-                <input type="number" id="rendaFixaDividendoPercentual" value="13" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularDividendos()">
+                <input type="number" id="rendaFixaDividendoPercentual" value="13" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="rendaFixaDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
             <div class="flex items-center space-x-4">
                 <label for="internacionalDividendoPercentual" class="block text-gray-700 font-semibold mb-2 w-1/3">Internacional (%)</label>
-                <input type="number" id="internacionalDividendoPercentual" value="14" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right" oninput="calcularDividendos()">
+                <input type="number" id="internacionalDividendoPercentual" value="14" class="w-2/3 px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors text-right">
                 <span id="internacionalDividendoValor" class="text-base font-bold text-gray-800 w-1/3 text-right"></span>
             </div>
         </div>
@@ -289,12 +289,12 @@
         <div class="space-y-6">
             <div>
                 <label for="taxaRetorno" class="block text-gray-700 font-semibold mb-2">Taxa de Retorno Anual (%)</label>
-                <input type="number" id="taxaRetorno" placeholder="Ex: 6" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularInvestimentoMensal()">
+                <input type="number" id="taxaRetorno" placeholder="Ex: 6" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
             </div>
             
             <div>
                 <label for="anos" class="block text-gray-700 font-semibold mb-2">Tempo em Anos</label>
-                <input type="number" id="anos" value="30" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="calcularInvestimentoMensal()">
+                <input type="number" id="anos" value="30" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
             </div>
         </div>
 
@@ -323,7 +323,7 @@
         <div class="space-y-6">
             <div>
                 <label for="inflacaoAnual" class="block text-gray-700 font-semibold mb-2">Inflação Anual (%)</label>
-                <input type="number" id="inflacaoAnual" value="6" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors" oninput="analisarInflacao()">
+                <input type="number" id="inflacaoAnual" value="6" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors">
             </div>
         </div>
 
@@ -397,25 +397,22 @@
         let myChart = null;
         let myPieChart = null;
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Add input listeners for real-time updates
-            document.getElementById('valorDesejado').addEventListener('input', calcularPatrimonio);
-            document.getElementById('percentual').addEventListener('input', calcularPatrimonio);
-            document.getElementById('fiiPercentual').addEventListener('input', calcularCarteira);
-            document.getElementById('acoesPercentual').addEventListener('input', calcularCarteira);
-            document.getElementById('rendaFixaPercentual').addEventListener('input', calcularCarteira);
-            document.getElementById('internacionalPercentual').addEventListener('input', calcularCarteira);
-            document.getElementById('fiiDividendoPercentual').addEventListener('input', calcularDividendos);
-            document.getElementById('acoesDividendoPercentual').addEventListener('input', calcularDividendos);
-            document.getElementById('rendaFixaDividendoPercentual').addEventListener('input', calcularDividendos);
-            document.getElementById('internacionalDividendoPercentual').addEventListener('input', calcularDividendos);
-            document.getElementById('taxaRetorno').addEventListener('input', calcularInvestimentoMensal);
-            document.getElementById('anos').addEventListener('input', calcularInvestimentoMensal);
-            
-            // Initial call to set default values and run calculations
+        // Função principal para recalcular todas as seções
+        function recalcularTudo() {
             calcularPatrimonio();
-            // Executa o cálculo de investimento mensal automaticamente ao carregar a página
+            calcularCarteira();
+            calcularDividendos();
             calcularInvestimentoMensal();
+            analisarInflacao();
+            calcularProximoAno();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Adiciona um único ouvinte de evento para toda a página
+            document.getElementById('main-container').addEventListener('input', recalcularTudo);
+            
+            // Chama a função de cálculo inicial para definir os valores padrão
+            recalcularTudo();
         });
 
         function calcularPatrimonio() {
@@ -451,7 +448,8 @@
             valorPatrimonioSpan.textContent = formatter.format(patrimonioTotal);
             resultadoDiv.classList.remove('hidden');
 
-            calcularCarteira();
+            document.getElementById('reportValorDesejado').textContent = formatter.format(valorDesejado);
+            document.getElementById('reportPatrimonioTotal').textContent = formatter.format(patrimonioTotal);
         }
 
         function calcularInvestimentoMensal() {
@@ -511,7 +509,6 @@
 
             renderLineChart(labels, data);
             relatorioCompletoDiv.classList.remove('hidden');
-            analisarInflacao();
         }
 
         function renderLineChart(labels, data) {
@@ -679,8 +676,6 @@
             const labels = ['FII', 'Ações', 'Renda Fixa', 'Internacional'];
             const data = [fiiPercentual, acoesPercentual, rendaFixaPercentual, internacionalPercentual];
             renderPieChart(labels, data);
-            
-            calcularDividendos();
         }
 
         function calcularDividendos() {
@@ -760,8 +755,6 @@
             sessionStorage.setItem('totalDividendoAnualPercentual', totalDividendoAnualPercentual);
 
             // Update report
-            document.getElementById('reportValorDesejado').textContent = formatter.format(parseFloat(sessionStorage.getItem('valorDesejado')));
-            document.getElementById('reportPatrimonioTotal').textContent = formatter.format(patrimonioTotal);
             document.getElementById('reportTotalDividendoAnual').textContent = `${formatter.format(totalDividendoAnual)} (${totalDividendoAnualPercentual.toFixed(2)}% ao ano)`;
             document.getElementById('reportTotalDividendoMensal').textContent = `${formatter.format(totalDividendoMensal)} (${totalDividendoMensalPercentual.toFixed(2)}% ao mês)`;
 
@@ -835,8 +828,6 @@
             // Update report
             document.getElementById('reportRetornoReal').textContent = `${retornoRealPercentual.toFixed(2)}%`;
             document.getElementById('reportAporteFiiInflacao').textContent = formatter.format(aporteFiiInflacao);
-            
-            calcularProximoAno();
         }
 
         function calcularProximoAno() {
