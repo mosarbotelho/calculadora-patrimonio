@@ -1,31 +1,70 @@
 Calculadora de Patrimonio
-Visão Geral do Projeto
-A Calculadora de Patrimonio é uma ferramenta completa para planejamento financeiro, desenvolvida para ajudar usuários a visualizar e alcançar a independência financeira. Baseada na popular Regra dos 4%, a aplicação permite que os usuários determinem o patrimonio total necessário para atingir uma renda passiva desejada.
+A Calculadora de Patrimonio é uma ferramenta interativa desenvolvida para ajudar você a planejar sua jornada de independência financeira. Baseada na Regra dos 4%, a aplicação permite calcular o patrimônio necessário para alcançar sua renda mensal desejada e, em seguida, simular o crescimento da sua carteira de investimentos ao longo do tempo.
 
-O projeto é construído com tecnologias web modernas, garantindo uma interface simples e intuitiva para o usuário.
+📝 Índice
+Funcionalidades Principais
 
 Tecnologias Utilizadas
-HTML: Estrutura fundamental da página.
 
-Tailwind CSS: Framework de estilização que facilita o desenvolvimento de um design responsivo e moderno.
+Como Usar
 
-JavaScript: Linguagem de programação responsável por toda a lógica de cálculo e interatividade.
+Estrutura do Projeto
 
-Chart.js: Biblioteca para a criação de gráficos dinâmicos, como o de pizza para alocação de ativos e o de barras para projeção de crescimento.
+Contribuição
 
-Firebase (Firestore): Solução de banco de dados em tempo real para salvar e carregar os dados do usuário, permitindo que o progresso seja acompanhado de forma persistente.
+Licença
 
-Funcionalidades Chave
-Cálculo do Patrimonio Alvo: Calcula o valor total necessário com base na renda mensal desejada e na taxa de retirada.
+✨ Funcionalidades Principais
+Cálculo de Patrimonio: Determine o valor total de patrimonio necessário para gerar a renda mensal desejada, usando a Regra dos 4% como base.
 
-Análise de Carteira: Permite ao usuário alocar o patrimonio em diferentes classes de ativos e visualizar a distribuição através de um gráfico de pizza.
+Planejamento da Carteira: Distribua seu patrimonio em diferentes classes de ativos, como Fundos Imobiliários (FIIs), Ações, Renda Fixa e Investimentos Internacionais.
 
-Projeção de Dividendos: Estima os rendimentos anuais e mensais com base na alocação de ativos e nas taxas de retorno esperadas.
+Projeção de Dividendos: Calcule os dividendos anuais e mensais projetados com base no retorno de cada classe de ativo.
 
-Planejamento de Investimento: Calcula o aporte mensal necessário para atingir a meta de patrimonio em um período de tempo definido, com uma projeção visual de crescimento.
+Análise de Viabilidade: Obtenha uma análise detalhada sobre a viabilidade de atingir sua meta de renda mensal apenas com dividendos de FIIs.
 
-Análise de Crescimento Real: Avalia o retorno da carteira em relação à inflação, ajudando a garantir que o poder de compra seja mantido.
+Análise de Inflação: Verifique se o seu patrimônio está crescendo acima da inflação, calculando o retorno real da sua carteira.
 
-Relatório Detalhado: Gera um relatório conciso que resume todas as informações calculadas, oferecendo uma visão clara do plano financeiro.
+Projeção de Crescimento Anual: Calcule o crescimento do seu patrimônio para o próximo ano, considerando os rendimentos e a realocação de capital para combater a inflação.
 
-Persistência de Dados: Salva os dados do usuário no Firestore, garantindo que as informações não se percam ao recarregar a página.
+Visualização Gráfica: Utilize gráficos dinâmicos para visualizar a alocação da sua carteira e a projeção de crescimento do patrimônio e dos dividendos ao longo dos anos.
+
+Salvamento Automático: Os dados são salvos e carregados automaticamente no Firebase Firestore, garantindo que suas informações sejam persistentes.
+
+🛠️ Tecnologias Utilizadas
+Frontend:
+
+HTML5: Estrutura da página.
+
+CSS3 (Tailwind CSS): Estilização e responsividade da interface.
+
+JavaScript: Lógica de cálculo, interatividade e integração com as APIs.
+
+Gráficos:
+
+Chart.js: Biblioteca para a criação dos gráficos de linha e de pizza.
+
+Backend (como Serviço):
+
+Firebase Authentication: Sistema de autenticação automático para gerenciar o acesso do usuário.
+
+Firebase Firestore: Banco de dados NoSQL para armazenar e sincronizar os dados da calculadora em tempo real.
+
+🚀 Como Usar
+Para utilizar a calculadora, basta interagir com os campos de entrada na página.
+
+Cálculo de Patrimonio: Insira o valor mensal de renda que você deseja e a porcentagem que ele representará do seu patrimônio total. O valor total do patrimônio será exibido automaticamente.
+
+Planejamento da Carteira: Distribua seu patrimônio nas porcentagens desejadas para cada classe de ativo. A porcentagem de "Internacional" será calculada automaticamente.
+
+Projeção de Dividendos: Insira o retorno anual projetado para cada classe de ativo para calcular seus dividendos.
+
+Investimento Mensal: Forneça um aporte inicial, a taxa de retorno e o período em anos para descobrir quanto você precisa investir mensalmente para atingir seu objetivo.
+
+A aplicação foi projetada para funcionar de forma automática: ao modificar qualquer valor, todos os cálculos e gráficos relacionados são atualizados em tempo real.
+
+🤝 Contribuição
+Contribuições são sempre bem-vindas! Se você tiver uma ideia para uma nova funcionalidade, um bug para corrigir ou uma melhoria na interface, sinta-se à vontade para abrir uma issue ou um pull request.
+
+📄 Licença
+Este projeto é distribuído sob a licença MIT. Para mais detalhes, consulte o arquivo LICENSE.
