@@ -1,4 +1,5 @@
 Calculadora de Patrimonio
+
 A Calculadora de Patrimonio é uma ferramenta interativa desenvolvida para ajudar você a planejar sua jornada de independência financeira. Baseada na Regra dos 4%, a aplicação permite calcular o patrimônio necessário para alcançar sua renda mensal desejada e, em seguida, simular o crescimento da sua carteira de investimentos ao longo do tempo.
 
 📝 Índice
