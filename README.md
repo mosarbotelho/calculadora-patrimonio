@@ -1,19 +1,31 @@
-Resumo do Projeto: Calculadora de Patrimônio
+Calculadora de Patrimonio
+Visão Geral do Projeto
+A Calculadora de Patrimonio é uma ferramenta completa para planejamento financeiro, desenvolvida para ajudar usuários a visualizar e alcançar a independência financeira. Baseada na popular Regra dos 4%, a aplicação permite que os usuários determinem o patrimonio total necessário para atingir uma renda passiva desejada.
 
-O projeto é uma Calculadora de Patrimônio interativa e completa, desenvolvida em um único arquivo HTML com Firebase para salvar os dados do usuário. Ela foi projetada para ajudar o usuário a planejar e monitorar sua jornada rumo à independência financeira.
+O projeto é construído com tecnologias web modernas, garantindo uma interface simples e intuitiva para o usuário.
 
-A aplicação é dividida em várias seções, cada uma com um propósito específico:
+Tecnologias Utilizadas
+HTML: Estrutura fundamental da página.
 
-Cálculo de Patrimônio: O usuário insere a renda mensal desejada no futuro e a porcentagem que essa renda deve representar de seu patrimônio total (baseada na Regra dos 4%). A calculadora então determina o valor total do patrimônio necessário para atingir essa meta.
+Tailwind CSS: Framework de estilização que facilita o desenvolvimento de um design responsivo e moderno.
 
-Planejamento da Carteira: Com o valor total do patrimônio calculado, o usuário pode distribuir a alocação de ativos entre classes como FIIs, Ações, Renda Fixa e Investimentos Internacionais. A ferramenta mostra a porcentagem e o valor monetário correspondente para cada classe, além de gerar um gráfico de pizza para uma visualização clara da alocação.
+JavaScript: Linguagem de programação responsável por toda a lógica de cálculo e interatividade.
 
-Dividendos Projetados: Nesta seção, o usuário projeta os dividendos anuais e mensais com base nas porcentagens de rendimento de cada classe de ativo. O cálculo agora inclui a porcentagem de cada classe em relação ao total de dividendos, fornecendo uma visão mais detalhada da origem da renda passiva.
+Chart.js: Biblioteca para a criação de gráficos dinâmicos, como o de pizza para alocação de ativos e o de barras para projeção de crescimento.
 
-Cálculo de Investimento Mensal: Com base na taxa de retorno e no tempo de investimento, a calculadora determina o valor de aporte mensal necessário para alcançar o patrimônio desejado. Um gráfico de linha projeta o crescimento do patrimônio ao longo do tempo.
+Firebase (Firestore): Solução de banco de dados em tempo real para salvar e carregar os dados do usuário, permitindo que o progresso seja acompanhado de forma persistente.
 
-Análise de Inflação: O usuário pode inserir a taxa de inflação para verificar se o retorno de sua carteira está superando a inflação (retorno real). A ferramenta também sugere o aporte necessário em FIIs para manter o poder de compra.
+Funcionalidades Chave
+Cálculo do Patrimonio Alvo: Calcula o valor total necessário com base na renda mensal desejada e na taxa de retirada.
 
-Projeção para o Próximo Ano: Por fim, a calculadora projeta o valor do patrimônio para o ano seguinte, considerando os rendimentos e o impacto da inflação.
+Análise de Carteira: Permite ao usuário alocar o patrimonio em diferentes classes de ativos e visualizar a distribuição através de um gráfico de pizza.
 
-Todas as funcionalidades são dinâmicas e interativas, e os dados do usuário são salvos e carregados automaticamente usando o Firestore, garantindo que as informações persistam entre as sessões.
+Projeção de Dividendos: Estima os rendimentos anuais e mensais com base na alocação de ativos e nas taxas de retorno esperadas.
+
+Planejamento de Investimento: Calcula o aporte mensal necessário para atingir a meta de patrimonio em um período de tempo definido, com uma projeção visual de crescimento.
+
+Análise de Crescimento Real: Avalia o retorno da carteira em relação à inflação, ajudando a garantir que o poder de compra seja mantido.
+
+Relatório Detalhado: Gera um relatório conciso que resume todas as informações calculadas, oferecendo uma visão clara do plano financeiro.
+
+Persistência de Dados: Salva os dados do usuário no Firestore, garantindo que as informações não se percam ao recarregar a página.
